@@ -1,0 +1,86 @@
+[buildPlans.CodeOnePiece]
+family = "Code OnePiece"
+spacing = "normal"
+serifs = "sans"
+
+[buildPlans.CodeOnePiece.variants.design]
+capital-a = "curly-top-serifed"
+capital-b = "standard-interrupted-bilateral-serifed"
+capital-c = "bilateral-inward-serifed"
+capital-d = "standard-unilateral-serifed"
+capital-e = "top-left-serifed"
+capital-f = "top-left-serifed"
+capital-g = "toothless-corner-serifed-hooked"
+capital-h = "top-left-bottom-right-serifed"
+capital-i = "short-serifed"
+capital-j = "serifed-both-sides"
+capital-k = "symmetric-touching-top-left-and-bottom-right-serifed"
+capital-l = "motion-serifed"
+capital-m = "hanging-serifed"
+capital-n = "standard-motion-serifed"
+capital-p = "open-motion-serifed"
+capital-q = "crossing"
+capital-r = "curly-open-top-left-and-bottom-right-serifed"
+capital-s = "serifless"
+capital-t = "motion-serifed"
+capital-u = "tailed-serifless"
+capital-v = "straight-motion-serifed"
+capital-w = "straight-vertical-sides-motion-serifed"
+capital-x = "straight-motion-serifed"
+capital-y = "straight-motion-serifed"
+capital-z = "cursive"
+a = "double-storey-serifed"
+b = "toothed-motion-serifed"
+c = "bilateral-inward-serifed"
+d = "toothed-bottom-serifed"
+e = "rounded"
+f = "flat-hook-serifed"
+g = "single-storey-serifed"
+h = "straight-motion-serifed"
+i = "serifed-diagonal-tailed"
+j = "diagonal-tailed-serifless"
+k = "symmetric-connected-top-left-and-bottom-right-serifed"
+l = "serifed-diagonal-tailed"
+m = "serifed"
+n = "straight-motion-serifed"
+p = "eared-motion-serifed"
+q = "diagonal-tailed-serifless"
+r = "hookless-top-serifed"
+s = "bilateral-inward-serifed"
+t = "bent-hook-short-neck2"
+u = "toothed-motion-serifed"
+v = "straight-motion-serifed"
+w = "straight-vertical-sides-motion-serifed"
+x = "straight-motion-serifed"
+y = "straight-motion-serifed"
+z = "cursive"
+long-s = "bent-hook-double-serifed"
+eszet = "longs-s-lig-tailed-middle-serifed-xh"
+lower-alpha = "crossing"
+lower-chi = "curly-serifed"
+cyrl-u = "straight-turn-serifed"
+zero = "unslashed"
+one = "no-base-top-cut"
+two = "curly-neck-serifed"
+seven = "straight-serifless"
+number-sign = "upright-tall"
+ampersand = "closed"
+dollar = "interrupted"
+
+  [buildPlans.CodeOnePiece.ligations]
+  inherits = "dlig"
+
+[buildPlans.CodeOnePiece.weights.Regular]
+shape = 500
+menu = 500
+css = 500
+
+[buildPlans.CodeOnePiece.weights.Bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.CodeOnePiece.widths.Normal]
+shape = 548
+menu = 6
+css = "normal"
