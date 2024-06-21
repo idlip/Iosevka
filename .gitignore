@@ -25,3 +25,5 @@ shared/fonts/imports/*/TTF/*
 
 # Platform specified files
 .DS_store
+
+fonts
