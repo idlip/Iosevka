@@ -1,9 +1,11 @@
-[buildPlans.CodeOnePiece]
-family = "Code OnePiece"
-spacing = "normal"
+[buildPlans.CodeHaki]
+family = "Code Haki"
+spacing = "quasi-proportional"
 serifs = "sans"
+noCvSs = false
+exportGlyphNames = true
 
-[buildPlans.CodeOnePiece.variants.design]
+[buildPlans.CodeHaki.variants.design]
 capital-a = "curly-top-serifed"
 capital-b = "standard-interrupted-bilateral-serifed"
 capital-c = "bilateral-inward-serifed"
@@ -32,19 +34,19 @@ capital-z = "cursive"
 a = "double-storey-serifed"
 b = "toothed-motion-serifed"
 c = "bilateral-inward-serifed"
-d = "toothed-bottom-serifed"
+d = "tailed-serifed"
 e = "rounded"
-f = "flat-hook-serifed"
+f = "flat-hook-tailed"
 g = "single-storey-serifed"
 h = "straight-motion-serifed"
 i = "serifed-diagonal-tailed"
-j = "diagonal-tailed-serifless"
+j = "serifless"
 k = "symmetric-connected-top-left-and-bottom-right-serifed"
-l = "serifed-diagonal-tailed"
-m = "serifed"
+l = "serifed-semi-tailed"
+m = "short-leg-tailed-top-left-serifed"
 n = "straight-motion-serifed"
 p = "eared-motion-serifed"
-q = "diagonal-tailed-serifless"
+q = "tailed-serifless"
 r = "hookless-top-serifed"
 s = "bilateral-inward-serifed"
 t = "bent-hook-short-neck2"
@@ -57,30 +59,57 @@ z = "cursive"
 long-s = "bent-hook-double-serifed"
 eszet = "longs-s-lig-tailed-middle-serifed-xh"
 lower-alpha = "crossing"
+capital-lambda = "curly-tri-serifed"
+lower-lambda = "curly-tailed-turn"
+lower-mu = "tailed-serifed"
+lower-pi = "tailed"
 lower-chi = "curly-serifed"
 cyrl-u = "straight-turn-serifed"
-zero = "unslashed"
-one = "no-base-top-cut"
+zero = "tall-slashed"
+one = "base"
 two = "curly-neck-serifed"
-seven = "straight-serifless"
+three = "flat-top-serifed"
+four = "closed-serifed"
+five = "upright-arched-serifed"
+six = "open-contour"
+seven = "bend-serifless-crossbar"
+eight = "two-circles"
+nine = "open-contour"
+tittle = "round"
+diacritic-dot = "round"
+punctuation-dot = "round"
+tilde = "low"
+asterisk = "penta-high"
+underscore = "high"
+caret = "high"
+ascii-grave = "raised-inverse-comma"
+ascii-single-quote = "raised-comma"
+paren = "large-contour"
+brace = "curly-flat-boundary"
+guillemet = "curly"
 number-sign = "upright-tall"
 ampersand = "closed"
+at = "threefold-solid-inner"
 dollar = "interrupted"
+percent = "rings-continuous-slash"
+bar = "natural-slope"
+question = "smooth"
+lig-hyphen-chain = "with-notch"
 
-  [buildPlans.CodeOnePiece.ligations]
+  [buildPlans.CodeHaki.ligations]
   inherits = "dlig"
 
-[buildPlans.CodeOnePiece.weights.Regular]
+[buildPlans.CodeHaki.weights.Medium]
 shape = 500
 menu = 500
 css = 500
 
-[buildPlans.CodeOnePiece.weights.Bold]
+[buildPlans.CodeHaki.weights.Bold]
 shape = 700
 menu = 700
 css = 700
 
-[buildPlans.CodeOnePiece.widths.Normal]
-shape = 548
-menu = 6
+[buildPlans.CodeHaki.widths.Normal]
+shape = 600
+menu = 5
 css = "normal"
