@@ -1,115 +1,80 @@
-[buildPlans.CodeHaki]
-family = "Code Haki"
-spacing = "quasi-proportional"
+[buildPlans.CodeOnePiece]
+family = "Code OnePiece"
+spacing = "fixed"
 serifs = "sans"
-noCvSs = false
-exportGlyphNames = true
+EXPORTGLYPHNAMES = false
 
-[buildPlans.CodeHaki.variants.design]
-capital-a = "curly-top-serifed"
-capital-b = "standard-interrupted-bilateral-serifed"
-capital-c = "bilateral-inward-serifed"
-capital-d = "standard-unilateral-serifed"
+# [buildPlans.CodeOnePiece.variants]
+# inherits = "ss14"
+
+[buildPlans.CodeOnePiece.variants.design]
+capital-a = "curly-serifless"
+capital-b = "standard-interrupted-serifless"
+capital-c = "unilateral-inward-serifed"
+capital-d = "more-rounded-unilateral-serifed"
 capital-e = "top-left-serifed"
 capital-f = "top-left-serifed"
-capital-g = "toothless-corner-serifed-hooked"
-capital-h = "top-left-bottom-right-serifed"
-capital-i = "short-serifed"
-capital-j = "serifed-both-sides"
-capital-k = "symmetric-touching-top-left-and-bottom-right-serifed"
-capital-l = "motion-serifed"
-capital-m = "hanging-serifed"
+capital-g = "toothed-serifless-hooked"
+capital-h = "top-left-serifed"
+capital-i = "serifed"
+capital-j = "serifed-symmetric"
+capital-k = "curly-serifless"
+capital-l = "serifless"
+capital-m = "hanging-motion-serifed"
 capital-n = "standard-motion-serifed"
 capital-p = "open-motion-serifed"
 capital-q = "crossing"
-capital-r = "curly-open-top-left-and-bottom-right-serifed"
+capital-r = "straight-bottom-right-serifed"
 capital-s = "serifless"
-capital-t = "motion-serifed"
-capital-u = "tailed-serifless"
+capital-t = "serifless"
+capital-u = "toothless-rounded-unilateral-motion-serifed"
 capital-v = "straight-motion-serifed"
-capital-w = "straight-vertical-sides-motion-serifed"
-capital-x = "straight-motion-serifed"
-capital-y = "straight-motion-serifed"
-capital-z = "cursive"
-a = "double-storey-serifed"
-b = "toothed-motion-serifed"
-c = "bilateral-inward-serifed"
-d = "tailed-serifed"
+capital-w = "straight-vertical-sides-serifless"
+capital-x = "curly-serifless"
+capital-y = "curly-serifless"
+capital-z = "curly-serifless"
+a = "double-storey-hook-inward-serifed-serifless"
+b = "toothless-rounded-serifless"
+c = "unilateral-inward-serifed"
+d = "tailed-serifless"
 e = "rounded"
-f = "flat-hook-tailed"
-g = "single-storey-serifed"
-h = "straight-motion-serifed"
-i = "serifed-diagonal-tailed"
-j = "serifless"
-k = "symmetric-connected-top-left-and-bottom-right-serifed"
-l = "serifed-semi-tailed"
-m = "short-leg-tailed-top-left-serifed"
-n = "straight-motion-serifed"
-p = "eared-motion-serifed"
-q = "tailed-serifless"
+f = "flat-hook-serifed"
+g = "single-storey-earless-corner"
+h = "tailed-serifless"
+i = "serifed-asymmetric"
+k = "curly-serifless"
+l = "serifed-flat-tailed"
+m = "serifless"
+n = "straight-serifless"
+p = "eared-serifless"
+q = "straight-serifless"
 r = "hookless-top-serifed"
-s = "bilateral-inward-serifed"
-t = "bent-hook-short-neck2"
-u = "toothed-motion-serifed"
+s = "unilateral-inward-serifed"
+t = "flat-hook"
+u = "toothless-rounded-serifless"
 v = "straight-motion-serifed"
-w = "straight-vertical-sides-motion-serifed"
-x = "straight-motion-serifed"
-y = "straight-motion-serifed"
-z = "cursive"
-long-s = "bent-hook-double-serifed"
-eszet = "longs-s-lig-tailed-middle-serifed-xh"
-lower-alpha = "crossing"
-capital-lambda = "curly-tri-serifed"
-lower-lambda = "curly-tailed-turn"
-lower-mu = "tailed-serifed"
-lower-pi = "tailed"
-lower-chi = "curly-serifed"
-cyrl-u = "straight-turn-serifed"
+w = "cursive-serifless"
+x = "curly-serifless"
+y = "cursive-serifless"
+z = "curly-serifless"
 zero = "tall-slashed"
-one = "base"
-two = "curly-neck-serifed"
-three = "flat-top-serifed"
-four = "closed-serifed"
-five = "upright-arched-serifed"
-six = "open-contour"
-seven = "bend-serifless-crossbar"
-eight = "two-circles"
-nine = "open-contour"
-tittle = "round"
-diacritic-dot = "round"
-punctuation-dot = "round"
-tilde = "low"
-asterisk = "penta-high"
-underscore = "high"
-caret = "high"
-ascii-grave = "raised-inverse-comma"
-ascii-single-quote = "raised-comma"
-paren = "large-contour"
-brace = "curly-flat-boundary"
-guillemet = "curly"
-number-sign = "upright-tall"
-ampersand = "closed"
-at = "threefold-solid-inner"
-dollar = "interrupted"
-percent = "rings-continuous-slash"
-bar = "natural-slope"
-question = "smooth"
-lig-hyphen-chain = "with-notch"
 
-  [buildPlans.CodeHaki.ligations]
-  inherits = "dlig"
+[buildPlans.CodeOnePiece.weights.Regular]
+shape = 400
+menu = 400
+css = 400
 
-[buildPlans.CodeHaki.weights.Medium]
+[buildPlans.CodeOnePiece.weights.Medium]
 shape = 500
 menu = 500
 css = 500
 
-[buildPlans.CodeHaki.weights.Bold]
-shape = 700
-menu = 700
-css = 700
+[buildPlans.CodeOnePiece.weights.Bold]
+shape = 800
+menu = 800
+css = 800
 
-[buildPlans.CodeHaki.widths.Normal]
-shape = 600
-menu = 5
-css = "normal"
+[buildPlans.CodeOnePiece.widths.normal]
+shape = 525
+menu  = 5
+css   = "normal"
