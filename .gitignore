@@ -17,8 +17,9 @@ packages/font-otl/src/**/*.mjs
 
 # Private config files
 private.toml
-private-build-plans.toml
-params/private-parameters.toml
+
+#private-build-plans.toml
+
 
 # pages-source ignores
 .next
@@ -27,3 +28,5 @@ shared/fonts/imports/*/TTF/*
 
 # Platform specified files
 .DS_store
+
+fonts
