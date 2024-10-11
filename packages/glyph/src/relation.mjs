@@ -30,6 +30,13 @@ export const LocalizedForm = {
 		Italic: LinkedGlyphProp("SerbianLocItalic"),
 	},
 	BGR: LinkedGlyphProp("BulgarianLoc"),
+	BSH: {
+		Upright: LinkedGlyphProp("BashkirLocUpright"),
+		Italic: LinkedGlyphProp("BashkirLocItalic"),
+	},
+	CHU: LinkedGlyphProp("ChuvashLoc"),
+	PLK: LinkedGlyphProp("PolishLoc"),
+	TRK: LinkedGlyphProp("TurkishLoc"),
 	IPPH: LinkedGlyphProp("IPALoc"),
 };
 
@@ -137,7 +144,7 @@ export const Joining = {
 		glyph.related.joining = cls;
 	},
 	or(glyph, cls) {
-		Joining.set(glyph, cls | Joining.get(cls));
+		Joining.set(glyph, cls | Joining.get(glyph));
 	},
 	amendOtName(baseName, cl) {
 		switch (cl) {
@@ -184,6 +191,11 @@ export const AnyLocalizedForm = {
 		if (LocalizedForm.SRB.Upright.get(glyph)) grs.push(LocalizedForm.SRB.Upright);
 		if (LocalizedForm.SRB.Italic.get(glyph)) grs.push(LocalizedForm.SRB.Italic);
 		if (LocalizedForm.BGR.get(glyph)) grs.push(LocalizedForm.BGR);
+		if (LocalizedForm.BSH.Upright.get(glyph)) grs.push(LocalizedForm.BSH.Upright);
+		if (LocalizedForm.BSH.Italic.get(glyph)) grs.push(LocalizedForm.BSH.Italic);
+		if (LocalizedForm.CHU.get(glyph)) grs.push(LocalizedForm.CHU);
+		if (LocalizedForm.PLK.get(glyph)) grs.push(LocalizedForm.PLK);
+		if (LocalizedForm.TRK.get(glyph)) grs.push(LocalizedForm.TRK);
 		if (LocalizedForm.IPPH.get(glyph)) grs.push(LocalizedForm.IPPH);
 		if (grs.length) return grs;
 		return null;

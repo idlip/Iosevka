@@ -52,7 +52,6 @@ export : define decompOverrides : object
 
 	# Spacing marks
 	0xA8   { 'markBaseSpace' 'dieresisAbove' }
-	0xAF   { 'markBaseSpace' 'sbRsbOverlineAbove' }
 	0xB8   { 'markBaseSpace' 'cedillaBelow' }
 	0x2C2  { 'markBaseSpace' 'lessAbove' }
 	0x2C3  { 'markBaseSpace' 'greaterAbove' }
@@ -80,7 +79,6 @@ export : define decompOverrides : object
 	0x2DD  { 'markBaseSpace' 'doubleAcuteAbove' }
 	0x2DF  { 'markBaseSpace' 'crossAbove' }
 	0x2EC  { 'markBaseSpace' 'caronBelow' }
-	0x2ED  { 'markBaseSpace' 'dblOverlineAbove' }
 	0x2EF  { 'markBaseSpace' 'downArrowHeadBelow' }
 	0x2F0  { 'markBaseSpace' 'upArrowHeadBelow' }
 	0x2F1  { 'markBaseSpace' 'lessBelow' }
@@ -184,24 +182,13 @@ export : define decompOverrides : object
 	0x1FE2 { 'grek/upsilon' 'dialytikaVariaAbove' }
 	0x1FE3 { 'grek/upsilon' 'dialytikaOxiaAbove' }
 
-	0x2c61 { 'l' 'dblBarOver' }
-	0x2c65 { 'a' 'shortSlash' }
-	0x2c66 { 't' 'longSlash' }
+	0x2C61 { 'l' 'dblBarOver' }
+	0x2C65 { 'a' 'shortSlash' }
+	0x2C66 { 't' 'longSlash' }
 
 	0xA74A { 'O' 'hStrike' }
 	0xA74B { 'o' 'hStrike' }
 	0xA799 { 'f' 'barOver' }
-	0xA7B8 { 'U' 'longSlash' }
-	0xA7B9 { 'u' 'shortSlash' }
-	0xA7BA { 'grek/Alpha'  'EgyptologicalYodTonos' }
-	0xA7BC { 'grek/Iota'   'EgyptologicalYodTonos' }
-	0xA7BE { 'U/withTonos' 'EgyptologicalYodTonos' }
-	0xA7BB { 'a' 'EgyptologicalYodAbove' }
-	0xA7BD { 'i' 'EgyptologicalYodAbove' }
-	0xA7BF { 'u' 'EgyptologicalYodAbove' }
-	0xA7C9 { 'S' 'hStrike' }
-	0xA7CA { 's' 'hStrike' }
-
 	0xA7A0 { 'G' 'oblStrike' }
 	0xA7A1 { 'g' 'oblStrike' }
 	0xA7A2 { 'K' 'oblStrike' }
@@ -212,8 +199,21 @@ export : define decompOverrides : object
 	0xA7A7 { 'r' 'oblStrike' }
 	0xA7A8 { 'S' 'oblStrike' }
 	0xA7A9 { 's' 'oblStrike' }
+	0xA7B8 { 'U' 'longSlash' }
+	0xA7B9 { 'u' 'shortSlash' }
+	0xA7BA { 'grek/Alpha'  'EgyptologicalYodTonos' }
+	0xA7BC { 'grek/Iota'   'EgyptologicalYodTonos' }
+	0xA7BE { 'U/withTonos' 'EgyptologicalYodTonos' }
+	0xA7BB { 'a' 'EgyptologicalYodAbove' }
+	0xA7BD { 'i' 'EgyptologicalYodAbove' }
+	0xA7BF { 'u' 'EgyptologicalYodAbove' }
+	0xA7C9 { 'S' 'hStrike' }
+	0xA7CA { 's' 'hStrike' }
+	0xA7CC { 'S' 'longSlash' }
+	0xA7CD { 's' 'shortSlash' }
 
 	0xAB30 { 'scripta'   'hStrike' }
+	0xAB3E { 'frak/o'    'shortSlash' }
 	0xAB3F { 'turnc'     'shortSlash' }
 	0xAB4F { 'uShortLeg' 'hStrike' }
 
@@ -371,6 +371,7 @@ export : define ccmpCombinations : list
 
 	# Retroflex hooks
 	list {0x0053 0x0322} 0xA7C5     # S
+	list {0x0071 0x0322} 0x024B     # q
 	list {0x0073 0x0322} 0x0282     # s
 	list {0x0279 0x0322} 0x027B     # ɹ
 	list {0x027F 0x0322} 0x0285     # ɿ
@@ -379,18 +380,29 @@ export : define ccmpCombinations : list
 	list {0x02E2 0x0322} 0x1DB3     # ˢ
 	list {0xA71D 0x0322} 0x107B9    # ꜝ
 
-	# Long stroke overlays
-	list {0x004F 0x0336} 0xA74A     # O
-	list {0x006F 0x0336} 0xA74B     # o
-
 	# Short stroke overlays
 	list {0x0044 0x0335} 0xA7C7     # D
 	list {0x0053 0x0335} 0xA7C9     # S
 	list {0x0064 0x0335} 0xA7C8     # d
 	list {0x0073 0x0335} 0xA7CA     # s
 
+	# Long stroke overlays
+	list {0x004F 0x0336} 0xA74A     # O
+	list {0x006F 0x0336} 0xA74B     # o
+
+	# Smooth breathings
+	list {0x0041 0x0486} 0xA7BA     # A
+	list {0x0049 0x0486} 0xA7BC     # I
+	list {0x0055 0x0486} 0xA7BE     # U
+	list {0x0061 0x0486} 0xA7BB     # a
+	list {0x0069 0x0486} 0xA7BD     # i
+	list {0x0075 0x0486} 0xA7BF     # u
+
 	# Ring overlays
 	list {0x006C 0x20D8} 0xAB39     # l
+	list {0x2190 0x20D8} 0x2B30     # ←
+	list {0x2192 0x20D8} 0x21F4     # →
+	list {0x2194 0x20D8} 0x2948     # ↔
 
 	# Reverse solidus overlays
 	list {0x2223 0x20E5} 0x2AEE     # ∣

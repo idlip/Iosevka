@@ -8,7 +8,6 @@ glyph-block Letter-Cyrillic-Orthography : begin
 	glyph-block-import Common-Derivatives
 	glyph-block-import Letter-Shared : CreateAccentedComposition
 
-	orthographic-italic 'cyrl/ve'             0x432
 	orthographic-italic 'cyrl/ghe'            0x433
 	orthographic-italic 'cyrl/de'             0x434
 	orthographic-italic 'cyrl/i'              0x438
@@ -35,6 +34,8 @@ glyph-block Letter-Cyrillic-Orthography : begin
 	orthographic-italic 'cyrl/dche'           0x52D
 	orthographic-italic 'cyrl/teTall'         0x1C84
 	orthographic-italic 'cyrl/teThreeLeg'     0x1C85
+	orthographic-italic 'cyrl/tje'            0x1C8A
+	orthographic-italic 'cyrl/este'             null
 	orthographic-italic 'cyrl/tseRev'         0xA661
 	orthographic-italic 'cyrl/dzze'           0xA689
 	orthographic-italic 'cyrl/teMidHook'      0xA68B
@@ -62,8 +63,11 @@ glyph-block Letter-Cyrillic-Orthography : begin
 	link-gr LocalizedForm.BGR         'cyrl/de'            'cyrl/de.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/zhe'           'cyrl/zhe.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/ze'            'cyrl/ze.BGR'
+	link-gr LocalizedForm.BGR         'cyrl/I'             'cyrl/I.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/i'             'cyrl/i.BGR'
+	link-gr LocalizedForm.BGR         'cyrl/IBreve'        'cyrl/IBreve.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/ibreve'        'cyrl/ibreve.BGR'
+	link-gr LocalizedForm.BGR         'cyrl/IGrave'        'cyrl/IGrave.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/igrave'        'cyrl/igrave.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/ka'            'cyrl/ka.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/El'            'cyrl/El.BGR'
@@ -83,3 +87,19 @@ glyph-block Letter-Cyrillic-Orthography : begin
 	link-gr LocalizedForm.BGR         'cyrl/tse'           'cyrl/tse.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/yer'           'cyrl/yer.BGR'
 	link-gr LocalizedForm.BGR         'cyrl/yeri'          'cyrl/yeri.BGR'
+
+	link-gr LocalizedForm.BSH.Upright 'cyrl/Ghayn'         'cyrl/Ghayn.BSH'
+	link-gr LocalizedForm.BSH.Upright 'cyrl/ghayn'         'cyrl/ghayn.BSH'
+	link-gr LocalizedForm.BSH.Upright 'cyrl/Dhe'           'cyrl/Dhe.BSH'
+	link-gr LocalizedForm.BSH.Upright 'cyrl/dhe'           'cyrl/dhe.BSH'
+	link-gr LocalizedForm.BSH.Upright 'cyrl/The'           'cyrl/The.BSH'
+	link-gr LocalizedForm.BSH.Upright 'cyrl/the'           'cyrl/the.BSH'
+
+	link-gr LocalizedForm.BSH.Italic  'cyrl/Ghayn'         'cyrl/Ghayn.BSH'
+	link-gr LocalizedForm.BSH.Italic  'cyrl/Dhe'           'cyrl/Dhe.BSH'
+	link-gr LocalizedForm.BSH.Italic  'cyrl/dhe'           'cyrl/dhe.BSH'
+	link-gr LocalizedForm.BSH.Italic  'cyrl/The'           'cyrl/The.BSH'
+	link-gr LocalizedForm.BSH.Italic  'cyrl/the'           'cyrl/the.BSH'
+
+	link-gr LocalizedForm.CHU         'cyrl/The'           'cyrl/The.CHU'
+	link-gr LocalizedForm.CHU         'cyrl/the'           'cyrl/the.CHU'

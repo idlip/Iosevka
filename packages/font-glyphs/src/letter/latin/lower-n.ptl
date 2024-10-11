@@ -10,6 +10,7 @@ glyph-block Letter-Latin-Lower-N : begin
 	glyph-block-import Common-Derivatives
 	glyph-block-import Mark-Shared-Metrics : markHalfStroke
 	glyph-block-import Mark-Adjustment : LeaningAnchor
+	glyph-block-import Letter-Shared : CreateAccentedComposition
 	glyph-block-import Letter-Shared-Shapes : CurlyTail nShoulder nShoulderKnots nShoulderMask
 	glyph-block-import Letter-Shared-Shapes : RightwardTailedBar DToothlessRise DMBlend MidHook
 	glyph-block-import Letter-Shared-Shapes : CyrDescender PalatalHook RetroflexHook EngHook
@@ -142,7 +143,12 @@ glyph-block Letter-Latin-Lower-N : begin
 			if sLT : include : sLT [DivFrame 1] XH
 			if sLB : include : sLB [DivFrame 1] 0
 
-		if (!tailed) : create-glyph "nHookBottom.\(suffix)" : glyph-proc
+		create-glyph "nHookLeft.\(suffix)" : glyph-proc
+			include [refer-glyph "n.\(suffix)"] AS_BASE ALSO_METRICS
+			eject-contour 'serifLB'
+			include : PalatalHook.lExt SB 0
+
+		if (!tailed) : create-glyph "nRTail.\(suffix)" : glyph-proc
 			include : MarkSet.e
 			include : Body XH SB RightSB 0 Stroke
 			include : RetroflexHook.rExt RightSB 0
@@ -168,6 +174,7 @@ glyph-block Letter-Latin-Lower-N : begin
 
 		create-glyph "latn/Eta.\(suffix)" : glyph-proc
 			include : MarkSet.capDesc
+			include : LeaningAnchor.Below.VBar.r RightSB
 			include : Body CAP SB RightSB [if tailed (CAP - SmallArchDepthB + O) Descender] Stroke
 			if tailed : include : EndingTail RightSB Descender (CAP - SmallArchDepthB) Stroke
 			if sLT : include : sLT [DivFrame 1] CAP
@@ -176,6 +183,7 @@ glyph-block Letter-Latin-Lower-N : begin
 
 		create-glyph "latn/eta.\(suffix)" : glyph-proc
 			include : MarkSet.p
+			include : LeaningAnchor.Below.VBar.r RightSB
 			include : Body XH SB RightSB [if tailed (XH - SmallArchDepthB + O) Descender] Stroke
 			if tailed : include : EndingTail RightSB Descender (XH - SmallArchDepthB) Stroke
 			if sLT : include : sLT [DivFrame 1] XH
@@ -281,19 +289,19 @@ glyph-block Letter-Latin-Lower-N : begin
 	link-reduced-variant 'n/descBase' 'n'
 	select-variant 'cyrl/pe.italic' (shapeFrom -- 'n')
 	select-variant 'cyrl/pe.italic/descBase' (shapeFrom -- 'n')
-	select-variant 'n/lTailBase' (shapeFrom -- 'n')
 	alias 'cyrl/pe.BGR' null 'cyrl/pe.italic'
 
 	select-variant 'eng' 0x14B
 	link-reduced-variant 'eng/phoneticRight' 'eng'
-	select-variant 'nHookBottom' 0x273 (follow -- 'eng')
+	select-variant 'nHookLeft' 0x272
+	select-variant 'nRTail' 0x273 (follow -- 'eng')
 	select-variant 'nCurlyTail' 0x235 (follow -- 'eng')
 	select-variant 'nCrossedTail' 0xAB3B (follow -- 'eng')
 	select-variant 'engCrossedTail' 0xAB3C (follow -- 'eng')
 	select-variant 'engPalatalHook' 0x1DF14 (follow -- 'eng')
 
-	select-variant 'RInsular' 0xA782 (follow -- 'eng/lTailBase')
-	select-variant 'rInsular' 0xA783 (follow -- 'eng/lTailBase')
+	select-variant 'RInsular' 0xA782 (follow -- 'engHookLeft')
+	select-variant 'rInsular' 0xA783 (follow -- 'engHookLeft')
 
 	select-variant 'grek/eta' 0x3B7
 	link-reduced-variant 'grek/eta/sansSerif' 'grek/eta' MathSansSerif
@@ -309,17 +317,15 @@ glyph-block Letter-Latin-Lower-N : begin
 	select-variant 'cyrl/yat.italic/base/corner' (shapeFrom -- 'cyrl/yat.italic/base')
 	select-variant 'cyrl/yat.italic/base/cursive' (shapeFrom -- 'cyrl/yat.italic/base')
 
+	CreateAccentedComposition 'nAcute' 0x144 'n' 'acuteAbove'
+	CreateAccentedComposition 'nAcute.PLK' null 'n' 'kreskaAbove'
+
 	do "n with Apostrophe"
 		derive-glyphs 'nApostrophe/comma' null 'commaAbove/asPunctuation' : function [src gr] : glyph-proc
 			include : with-transform [Translate (Width + SB - Middle) 0]
 				refer-glyph src
 
 		derive-composites 'nApostrophe' 0x149 'n' 'nApostrophe/comma'
-
-	derive-glyphs 'nLTail' 0x272 'n/lTailBase' : lambda [src srl] : glyph-proc
-		include [refer-glyph src] AS_BASE ALSO_METRICS
-		eject-contour 'serifLB'
-		include : PalatalHook.lExt SB 0
 
 	glyph-block-import Letter-Blackboard : BBS BBD BBBarLeft
 	create-glyph 'mathbb/n' 0x1D55F : glyph-proc

@@ -182,6 +182,7 @@ glyph-block Letter-Latin-Lower-M : begin
 		include : tagged 'barL' : VBar.l df.leftSB lbot (top - DToothlessRise) df.mvs
 		# include : tagged 'barM' : VBar.m mid mbot (top - DToothlessRise) df.mvs
 
+	glyph-block-export EarlessRoundedDoubleArchSmallMShape
 	define [EarlessRoundedDoubleArchSmallMShape df top lbot mbot rbot _mid] : glyph-proc
 		local mid : fallback _mid df.middle
 		include : union
@@ -279,7 +280,7 @@ glyph-block Letter-Latin-Lower-M : begin
 		if (Body === SmallMArches && !shortLeg) : begin
 			if (!tailed) : begin
 				create-glyph "cyrl/tjeKomi.italic.\(suffix)" : glyph-proc
-					local df : include : DivFrame para.diversityM 4
+					local df : include : DivFrame [mix 1 para.diversityM 2] 4
 					include : df.markSet.e
 					local subDf : df.slice 4 3 0
 					include : Body subDf XH 0 0 (XH / 2)
@@ -295,8 +296,19 @@ glyph-block Letter-Latin-Lower-M : begin
 					local sf2 : [SerifFrame.fromDf df (XH / 2) 0].slice 2 3
 					if SLAB : include sf2.rt.full
 
+				create-glyph "cyrl/tje.italic/base/corner.\(suffix)" : glyph-proc
+					local df : include : DivFrame [mix 1 para.diversityM 2] 4
+					include : df.markSet.e
+					local subDf : df.slice 4 3 0
+					include : Body   subDf XH 0 0 (XH - SmallArchDepthB - TINY)
+					include : Serifs subDf XH 0 0 0 false false
+
+				create-glyph "cyrl/tje.italic/base/cursive.\(suffix)" : glyph-proc
+					include [refer-glyph "cyrl/tje.italic/base/corner.\(suffix)"] AS_BASE ALSO_METRICS
+					eject-contour 'serifRB'
+
 			create-glyph "cyrl/teMidHook.italic.\(suffix)" : glyph-proc
-				local df : include : DivFrame para.diversityM 4
+				local df : include : DivFrame [mix 1 para.diversityM 2] 4
 				include : df.markSet.e
 				local subDf : df.slice 4 3 0
 				include : mShapeBody subDf XH
@@ -316,6 +328,10 @@ glyph-block Letter-Latin-Lower-M : begin
 	alias 'cyrl/te/reduced.italic' null 'cyrl/te.italic'
 	select-variant 'cyrl/te.italic/descBase' (shapeFrom -- 'm')
 	select-variant 'cyrl/tjeKomi.italic'
+
+	select-variant 'cyrl/tje.italic/base/corner'
+	select-variant 'cyrl/tje.italic/base/cursive'
+
 	select-variant 'cyrl/teMidHook.italic' (follow -- 'cyrl/te.italic')
 	alias 'cyrl/te.BGR' null 'cyrl/te.italic'
 	alias 'cyrl/te/reduced.BGR' null 'cyrl/te.italic'
@@ -401,28 +417,28 @@ glyph-block Letter-Latin-Lower-M : begin
 				eject-contour 'serifLT'
 				include : CyrDescender.rSideJut df.rightSB 0 (refSw -- df.mvs)
 
-	select-variant 'turnm' 0x26F (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
+	select-variant 'turnm' 0x26F (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
 	select-variant 'turnm/reduced' (shapeFrom -- 'turnm')
 
-	select-variant 'capitalTurnm' 0x19C (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
+	select-variant 'capitalTurnm' 0x19C (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
 
-	select-variant 'turnmLeg' 0x270 (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'turnmLeg/full' 'turnmLeg/reduced'])
+	select-variant 'turnmLeg' 0x270 (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'turnmLeg/full' 'turnmLeg/reduced'])
 	select-variant 'turnmLeg/reduced' (shapeFrom -- 'turnmLeg')
 
-	select-variant 'turnmSideways' 0x1D1F (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
+	select-variant 'turnmSideways' 0x1D1F (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'turnm/full' 'turnm/reduced'])
 
-	select-variant 'cyrl/sha.italic' (shapeFrom -- 'turnm') (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'cyrl/sha.italic/full' 'cyrl/sha.italic/reduced'])
+	select-variant 'cyrl/sha.italic' (shapeFrom -- 'turnm') (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'cyrl/sha.italic/full' 'cyrl/sha.italic/reduced'])
 	alias 'cyrl/sha.BGR' null 'cyrl/sha.italic'
 	select-variant 'cyrl/sha/reduced.italic' (shapeFrom -- 'turnm') (follow -- 'cyrl/sha.italic/reduced')
 	alias 'cyrl/sha/reduced.BGR' null 'cyrl/sha/reduced.italic'
 
-	select-variant 'cyrl/shcha.italic' (follow -- [if [MEnoughSpaceForFullSerifs : dfM] 'cyrl/shcha.italic/full' 'cyrl/shcha.italic/reduced'])
+	select-variant 'cyrl/shcha.italic' (follow -- [conditional-follow [MEnoughSpaceForFullSerifs : dfM] 'cyrl/shcha.italic/full' 'cyrl/shcha.italic/reduced'])
 	alias 'cyrl/shcha.BGR' null 'cyrl/shcha.italic'
 	select-variant 'cyrl/shcha/reduced.italic' (shapeFrom -- 'cyrl/shcha.italic') (follow -- 'cyrl/shcha.italic/reduced')
 	alias 'cyrl/shcha/reduced.BGR' null 'cyrl/shcha/reduced.italic'
 
-	derive-composites 'cyrl/te.SRB' null 'cyrl/sha.italic' 'macronAbove'
-	derive-composites 'cyrl/te/reduced.SRB' null 'cyrl/sha/reduced.italic' 'macronAbove'
+	derive-composites 'cyrl/te.SRB' null 'cyrl/sha.italic' 'sbRsbOverlineAbove/diversityM'
+	derive-composites 'cyrl/te/reduced.SRB' null 'cyrl/sha/reduced.italic' 'sbRsbOverlineAbove/diversityM'
 
 	glyph-block-import Letter-Blackboard : BBS BBD BBBarLeft
 	create-glyph 'mathbb/m' 0x1D55E : glyph-proc

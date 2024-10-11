@@ -29,7 +29,7 @@ glyph-block Symbol-Math-APL : begin
 		define background : new-glyph : glyph-proc : include fnBackground AS_BASE ALSO_METRICS
 
 		local corners : new-glyph : glyph-proc
-			set this.gizmo : Translate 0 0
+			set currentGlyph.gizmo : Translate 0 0
 			foreach [c : items-of : overlay.geometry.toContours] : foreach [z : items-of c] : do
 				if (z.type === Point.Type.Corner) : begin
 					define x z.x
@@ -274,9 +274,12 @@ glyph-block Symbol-Math-APL : begin
 	LinkAplFormForNwidWwid 'whiteTriangleUp'
 	LinkAplFormForNwidWwid 'whiteTriangleDown'
 	LinkAplFormForNwidWwid 'whiteTriangleRB'
+	LinkAplFormForNwidWwid 'whiteTriangleRT'
 	LinkAplFormForNwidWwid 'arrowDownRight'
 	LinkAplFormForNwidWwid 'barArrowUp'
 	LinkAplFormForNwidWwid 'barArrowDown'
+	LinkAplFormForNwidWwid 'counterArrowLeft'
+	LinkAplFormForNwidWwid 'counterArrowRight'
 	LinkAplFormForNwidWwid 'cwOpenCircleArrow'
 	LinkAplFormForNwidWwid 'dashArrowUp'
 	LinkAplFormForNwidWwid 'dottedCircle'
@@ -289,9 +292,11 @@ glyph-block Symbol-Math-APL : begin
 	LinkAplFormForNwidWwid 'vBarSquare'
 	LinkAplFormForNwidWwid 'zigZagArrow'
 	LinkAplFormForNwidWwid 'uni21CC'
+	LinkAplFormForNwidWwid 'uni2335'
+	LinkAplFormForNwidWwid 'uni238B'
+	LinkAplFormForNwidWwid 'uni25E0'
+	LinkAplFormForNwidWwid 'uni25E1'
 	LinkAplFormForNwidWwid 'uni25F0'
 	LinkAplFormForNwidWwid 'uni25F3'
 	LinkAplFormForNwidWwid 'uni25F4'
-	LinkAplFormForNwidWwid 'uni2335'
-	LinkAplFormForNwidWwid 'uni238B'
 	LinkAplFormForNwidWwid 'uni2682'

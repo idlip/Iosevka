@@ -69,12 +69,16 @@ glyph-block Letter-Latin-Rams-Horn : begin
 				else : no-shape
 
 		if SLAB : begin
-			include : VSerif.dl  SB      (top - sw) (VJut * (sw / Stroke) - sw) fine
+			include : VSerif.dl SB      (top - sw) (VJut * (sw / Stroke) - sw) fine
 			include : VSerif.dr RightSB (top - sw) (VJut * (sw / Stroke) - sw) fine
 
 	create-glyph 'ramshorn' 0x264 : glyph-proc
 		include : MarkSet.e
 		include : RamsHornShape false 0 XH
+
+	create-glyph 'Ramshorn' 0xA7CB : glyph-proc
+		include : MarkSet.capital
+		include : RamsHornShape false 0 CAP
 
 	### Ayin
 	create-glyph 'latinAyin' 0x1D25 : glyph-proc
